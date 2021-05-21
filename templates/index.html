@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <h1>Upload your vector image!</h1>
+    <p class="lead">Press this button to upload an image in SVG format, the robot will start to draw it.</p>
+    <p class="lead">
+        <form action="/launch_robot" method="post" enctype="multipart/form-data" class="form-group">
+          {% csrf_token %}
+          <input type="file" name="image" class="form-control-file" accept=".svg">
+          <button type="submit" id="submitButton" class="btn btn-lg btn-secondary">Submit</button>
+        </form>
+    </p>
+{% endblock %}
